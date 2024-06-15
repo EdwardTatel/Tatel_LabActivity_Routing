@@ -1,18 +1,10 @@
-import { Link } from 'react-router-dom'
 import './App.css'
 
-export default function Home({articles}) {
-
+export default function Home() {
   return (
-    <div className="content">
-      <h2>Articles</h2>      
-      {articles && articles.map(article => (
-        <div key={article.id} className="card">
-          <h3>{article.title}</h3>
-          <p>Written by {article.author}</p>
-          <Link to={`/articles/${article.id}`}>Read More...</Link>
-        </div>
-      ))}
+    <div className='content'>
+      <h2>Home</h2>
+      <p>This is the home page! Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, quisquam. Tempora quod dolores a, at quis accusantium praesentium vitae beatae aliquam harum autem fugit! Unde repellendus est pariatur quia odit!</p>
     </div>
   )
 }

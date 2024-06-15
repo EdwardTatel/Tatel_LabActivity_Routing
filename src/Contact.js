@@ -1,17 +1,20 @@
-import { useLocation } from "react-router-dom"
-import './App.css'
+import React from 'react';
+import { useLocation } from 'react-router-dom';
+import './App.css';
 
-export default function Contact() {
-  const queryString = useLocation().search
-  console.log(queryString)
-  
-  const queryParams = new URLSearchParams(queryString)
-  const name = queryParams.get("name")
-  
+export default function Contact({ username }) {
+  const queryString = useLocation().search;
+  const queryParams = new URLSearchParams(queryString);
+  const name = queryParams.get('name');
+
   return (
     <div className='content'>
-      <h2>Hey {name}, Contact Us</h2>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam explicabo laudantium nemo voluptas cum omnis error voluptate. Nihil numquam ipsum necessitatibus hic odit neque consequuntur dolor. Magni quos ratione iste.</p>
+      <h2>Hey {username || name}, Contact Us</h2>
+      <p>
+        This is the contact page! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam explicabo laudantium nemo
+        voluptas cum omnis error voluptate. Nihil numquam ipsum necessitatibus hic odit neque
+        consequuntur dolor. Magni quos ratione iste.
+      </p>
     </div>
-  )
+  );
 }

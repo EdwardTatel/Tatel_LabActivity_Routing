@@ -5,7 +5,6 @@ function Login({ onLoginSuccess }) {
     { userName: "admin123", passWord: "admin123" },
     { userName: "Edward", passWord: "Tatel123" },
     { userName: "Hybrid", passWord: "Programming" },
-    { userName: "", passWord: "" },
   ]);
 
   const [username, setUsername] = useState('');
@@ -14,7 +13,7 @@ function Login({ onLoginSuccess }) {
   const checkCredentials = () => {
     const user = users.find(user => user.userName === username && user.passWord === password);
     if (user) {
-      onLoginSuccess();
+      onLoginSuccess(username); 
     } else {
       alert('Invalid credentials');
     }

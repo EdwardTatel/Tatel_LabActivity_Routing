@@ -10,9 +10,11 @@ import Contact from './Contact';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [username, setUsername] = useState('doggy');
 
-  const handleLoginSuccess = () => {
+  const handleLoginSuccess = (username) => {
     setIsLoggedIn(true);
+    setUsername(username);
   };
 
   return (
@@ -42,7 +44,7 @@ function App() {
             <Routes>
               <Route path="/"  element={<Home />} />
               <Route path="/about" element={<About />} />
-              <Route path="/contact"  element={<Contact />}  />
+              <Route path="/contact"  element={<Contact username={username} />} />
               <Route path="/*" element={<Navigate to="/" />} />
             </Routes>
           </>
